@@ -191,13 +191,13 @@ fun border(){
 fun main() {
     val eightQueens = EightQueensProblem()
     val solution = eightQueens.solve()
+    print("There are ${eightQueens.numOfQueens(solution)} queens on the board.")
     border()
     for(i in 0 until solution.size){
         print("|  ")
         for(j in 0 until solution.size){
             if(solution[i][j] == 1){
-                print(solution[i][j])
-                print("  |  ")
+                print("Q  |  ")
             }
             else print("   |  ")
         }
