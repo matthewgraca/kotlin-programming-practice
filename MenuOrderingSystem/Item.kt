@@ -4,7 +4,7 @@ class Item {
     var name: String
     var cost: Int
 
-    constructor(name: String, cost: Int, /*category: Any*/){
+    constructor(name: String, cost: Int){
         this.name = name;
         this.cost = cost;
     }
