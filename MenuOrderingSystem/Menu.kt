@@ -1,14 +1,16 @@
 class Menu {
-
+    
+    var name: String
     val itemList: Array<Item>
 
     constructor(itemList: Array<Item>){
-        this.itemList = itemList;
+        this.itemList = itemList
+        this.name = name
     }
 
     fun selectItem(item: Item): Item? {
         if(itemList.contains(item))
-            return item;
+            return item
         return null
     }
 
@@ -26,6 +28,16 @@ class Menu {
 
     fun getItems(): Array<Item>{
         return itemList;
+    }
+    
+    @JvmName("getName1")
+    fun getName() : String {
+        return name
+    }
+
+    fun setName(newName : String) :Boolean{
+        this.name= newName;
+        return true;
     }
 
     override fun toString() :String{
