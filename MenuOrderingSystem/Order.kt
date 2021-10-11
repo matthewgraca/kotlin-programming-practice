@@ -25,8 +25,7 @@ class Order {
     }
 
     override fun toString(): String {
-        var orderOutput: String
-        orderOutput = "Order:\n"
+        var orderOutput = ""
         val iterator = items.listIterator();
         for (item in iterator) {
             orderOutput = orderOutput.plus(item.name).plus(": $").plus(item.cost).plus("\n") //getters not used
