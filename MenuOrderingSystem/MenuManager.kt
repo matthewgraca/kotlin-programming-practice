@@ -18,6 +18,15 @@ class MenuManager {
         return true
     }
 
+    fun selectMenu(selectedMenu: String) : Menu? {
+        for(i in 0..menuList.size){
+            if(menuList[i].getName().equals(selectedMenu)){
+                return menuList[i]
+            }
+        }
+        return null
+    }
+    
     fun removeMenu(menu: Menu) :Menu? {
         if(menuList.contains(menu)){
             var tempMenu = menu

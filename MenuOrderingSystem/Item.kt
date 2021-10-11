@@ -3,12 +3,10 @@ import kotlin.Enum as KotlinEnum
 class Item {
     var name: String
     var cost: Int
-    //val category: kotlin.Enum             --> Issue with Enum, not very sure how to implement this one as desired
 
-    constructor(name: String, cost: Int, /*category: Any*/){
+    constructor(name: String, cost: Int){
         this.name = name;
         this.cost = cost;
-        //this.category = category
     }
 
     @JvmName("getCost1")
