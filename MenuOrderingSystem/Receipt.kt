@@ -5,7 +5,6 @@ enum class PayMethod {
 }
 
 class Receipt {
-    var total = 0
     var payMethod: PayMethod
     var order: Order
 
