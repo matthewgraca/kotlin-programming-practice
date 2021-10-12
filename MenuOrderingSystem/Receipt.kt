@@ -6,16 +6,19 @@ enum class PayMethod {
 
 class Receipt {
     var payMethod: PayMethod
-    var order: Order
+    var change: Int
+    var items: String
+    var total: Int
 
-    constructor(payMethod: PayMethod, order: Order) {
+    constructor(payMethod: PayMethod, total: Int, amount: Int, bill: String) {
         this.payMethod = payMethod
-        this.order = order
+        this.change = amount - total
+        this.total = total
+        this.items = bill
     }
 
     override fun toString(): String {
-        var orderOutput = "Receipt:\nPayment Method: " + payMethod.name + "\n" + order.toString() + "\n Total: $" + order.calculateTotal()
-
+        var orderOutput = "Receipt:\n" + items + "\nPayment Method: " + payMethod + "\nCash: $"+ (change + total) + "\n" + "Change: $" + change + "\nTotal: $" + total
         return orderOutput
     }
 }
