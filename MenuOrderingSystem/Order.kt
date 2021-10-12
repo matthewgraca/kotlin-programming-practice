@@ -1,4 +1,5 @@
 class Order {
+    var orderNumber: Int = 0
     var items: MutableList<Item>
 
     constructor(items: MutableList<Item>) {
@@ -15,6 +16,14 @@ class Order {
         return true
     }
 
+    fun isEmpty(): Boolean {
+        return items.isEmpty()
+    }
+
+    fun generateReceipt(amount: Int): Receipt{
+        return Receipt(PayMethod.CASH, calculateTotal(), amount, this.toString())
+    }
+
     fun calculateTotal(): Int {
         var orderTotal = 0
         val iterator = items.listIterator();
@@ -25,7 +34,8 @@ class Order {
     }
 
     override fun toString(): String {
-        var orderOutput = ""
+        var orderOutput = "Order: "
+        orderOutput = orderOutput.plus(orderNumber).plus("\n")
         val iterator = items.listIterator();
         for (item in iterator) {
             orderOutput = orderOutput.plus(item.name).plus(": $").plus(item.cost).plus("\n") //getters not used
