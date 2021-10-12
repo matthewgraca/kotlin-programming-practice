@@ -3,25 +3,29 @@ class Menu {
     var name: String
     val itemList: Array<Item>
 
-    constructor(itemList: Array<Item>){
+
+    constructor(name: String, itemList: Array<Item>){
         this.itemList = itemList
         this.name = name
     }
 
-    fun selectItem(item: Item): Item? {
-        if(itemList.contains(item))
-            return item
+    fun selectItem(item: String): Item? {
+        for(i in 0..itemList.size-1){
+            if(itemList[i].name == item)
+                return itemList[i]
+        }
         return null
     }
 
     fun printMenu():Boolean{
         if(itemList.isNotEmpty()){
-            for(i in 0..itemList.size){
+            println("${this.name}:")
+            for(i in 0..itemList.size-1){
                 var itemName: String = itemList[i].getName();
                 var itemCost: Int = itemList[i].getCost();
-                println("$itemName --- {'$'}$itemCost")
-                return true
+                println("${i+1} $itemName --- $$itemCost")
             }
+            return true
         }
         return false
     }
@@ -29,7 +33,7 @@ class Menu {
     fun getItems(): Array<Item>{
         return itemList;
     }
-    
+
     @JvmName("getName1")
     fun getName() : String {
         return name
@@ -42,7 +46,7 @@ class Menu {
 
     override fun toString() :String{
         var items :String
-        items = "\nMenu: \n"
+        items = "\n$name: \n"
         if(itemList.size > 0) {
             for (i in 0..itemList.size-1) {
                 val itemName = itemList[i].name
