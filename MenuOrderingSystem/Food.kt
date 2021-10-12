@@ -1,8 +1,8 @@
 class Food : Item {
-    val ingredients: Array<String>
+    val description: String
 
-    constructor(name:String, cost: Int, ingredients: Array<String>) : super(name, cost) {
-        this.ingredients = ingredients
+    constructor(name:String, cost: Int, description: String) : super(name, cost) {
+        this.description = description
     }
 
 }
