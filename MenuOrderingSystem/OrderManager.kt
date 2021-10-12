@@ -7,6 +7,7 @@ class OrderManager {
     }
 
     fun addOrder(order: Order):Boolean {
+        order.orderNumber = orderList.size + 1
         orderList.add(order)
         return true
     }
