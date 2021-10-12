@@ -1,11 +1,9 @@
 import kotlin.collections.indexOf as indexOf1
 
 class MenuManager {
-    var name: String
     var menuList: Array<Menu>
 
-    constructor(name:String, menuList:Array<Menu>){
-        this.name = name
+    constructor(menuList:Array<Menu>){
         this.menuList = menuList
     }
 
@@ -14,12 +12,12 @@ class MenuManager {
     }
 
     fun addMenu(menu:Menu):Boolean{
-        menuList.plus(menu)
+        menuList = menuList.plus(menu)
         return true
     }
 
     fun selectMenu(selectedMenu: String) : Menu? {
-        for(i in 0..menuList.size){
+        for(i in 0..menuList.size-1){
             if(menuList[i].getName().equals(selectedMenu)){
                 return menuList[i]
             }
