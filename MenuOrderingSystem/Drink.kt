@@ -1,7 +1,7 @@
 class Drink : Item{
-    val size: Enum<Size>
+    val size: Size
 
-    constructor(name: String, cost: Int, size: Enum<Size>): super(name, cost){
+    constructor(name: String, cost: Int, size: Size): super(name, cost){
         this.size = size
     }
 }
