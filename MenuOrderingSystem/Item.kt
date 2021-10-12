@@ -1,6 +1,6 @@
 import kotlin.Enum as KotlinEnum
 
-class Item {
+open class Item {
     var name: String
     var cost: Int
 
